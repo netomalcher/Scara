@@ -71,7 +71,7 @@ To change the model, edit the glTF in Blender, re-export, and re-run Balsam. Bal
 ## Roadmap
 
 - [ ] Joint hierarchy in `Scara.qml`, driven by the three joint values (P, R, R)
-- [ ] Forward and inverse kinematics of the PRR arm (screw theory), ported from MATLAB
+- [ ] Forward and inverse kinematics of the PRR arm (screw theory), implemented in C++ and ported from an existing MATLAB implementation
 - [ ] Trajectory generation and drawing of letters and shapes
 - [ ] Plots of joint speeds and end effector speed (Qt Graphs)
 
