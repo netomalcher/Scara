@@ -2,6 +2,10 @@
 
 A Qt Quick 3D application that renders a 3-DOF SCARA-type robot arm with an orbiting camera. The arm has a PRR kinematic structure: one prismatic joint (vertical) followed by two revolute joints.
 
+| Front | Side |
+|---|---|
+| ![Front view](docs/Front.png) | ![Side view](docs/Side.png) |
+
 ## Status
 
 The viewer renders the static model. Joint motion, kinematics, drawing and speed plots are the next steps (see Roadmap).
