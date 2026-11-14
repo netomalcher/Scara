@@ -31,12 +31,34 @@ The original CAD model is titled "Four Axis Robotic Arm". This project treats it
 
 With Qt Creator: open `CMakeLists.txt`, select a Qt 6.10+ kit, and run.
 
-From the command line:
+From the command line (Linux or macOS):
 
 ```
 cmake -S . -B build -DCMAKE_PREFIX_PATH=<path to your Qt kit>
 cmake --build build
+./build/appScara
 ```
+
+From the command line on Windows with the MinGW kit from the Qt installer:
+
+1. Add these folders to `PATH` (adjust them to your installation):
+   - `C:\Qt\Tools\mingw1310_64\bin`
+   - `C:\Qt\Tools\Ninja`
+   - `C:\Qt\Tools\CMake_64\bin`
+
+   If another MinGW installation (for example MSYS2) is on `PATH`, put the Qt folders before it, so that the compiler matches the Qt kit.
+2. Configure with the Ninja generator, then build and run (in the same terminal):
+
+   ```
+   cmake -S . -B build -G Ninja -DCMAKE_PREFIX_PATH=C:/Qt/6.11.1/mingw_64
+   cmake --build build
+   $env:PATH = "C:\Qt\6.11.1\mingw_64\bin;$env:PATH"
+   .\build\appScara.exe
+   ```
+
+   (The last two lines are PowerShell. The `PATH` line makes the Qt DLLs available to the executable; alternatively, run `windeployqt` on `appScara.exe`.)
+
+`-G Ninja` is needed on Windows because, without it, CMake may choose a different generator (such as Visual Studio) that does not match the MinGW toolchain.
 
 Controls: drag with the mouse to orbit, scroll to zoom.
 
